@@ -13,9 +13,7 @@ movies[4] = "Spirited Away";
 
 console.log(movies[0]); // first movie
 
-
-
- //3) Copy step 2. Add a new movie into the 3rd position.
+ //3) Add a new movie into the 3rd position.
 var moviesStep3 = new Array(5);
 moviesStep3[0] = "Inception";
 moviesStep3[1] = "The Matrix";
@@ -26,7 +24,6 @@ moviesStep3[4] = "Spirited Away";
 // insert at 3rd position (index 2)
 moviesStep3.splice(2, 0, "The Dark Knight");
 console.log(moviesStep3.length);
-
 
 
 //4) Literal notation, 5 movies.
@@ -53,7 +50,7 @@ for (var index in moviesStep5) {
 }
 
 
-// 6) Copy step 5. Use for/of to display each movie.
+// 6)Use for/of to display each movie.
 
 for (var movie of moviesStep5) {
   console.log(movie);
@@ -61,9 +58,9 @@ for (var movie of moviesStep5) {
 
 
 
-//7) Copy step 5. Using for/of, display in sorted view.
+//7) Using for/of, display in sorted view.
  
-var sortedMovies = moviesStep5.slice().sort(); // copy + sort
+var sortedMovies = moviesStep5.slice().sort();
 for (var movie of sortedMovies) {
   console.log(movie);
 }
@@ -109,16 +106,14 @@ console.log(firstItem);
 
 var moviesStep12 = moviesStep5.concat(leastFavMovies);
 
-// Find indices of movies we regret
 var regretIndices = [];
 for (var i = 0; i < moviesStep12.length; i++) {
   if (leastFavMovies.indexOf(moviesStep12[i]) !== -1) {
     regretIndices.push(i);
   }
 }
-console.log(regretIndices); // indices of disliked movies
+console.log(regretIndices);
 
-// Replace those spots with movies we DO like (example replacements)
 var replacements = ["Whiplash", "Arrival", "Up"];
 for (var r = 0; r < regretIndices.length; r++) {
   moviesStep12[regretIndices[r]] = replacements[r];
@@ -126,7 +121,7 @@ for (var r = 0; r < regretIndices.length; r++) {
 console.log(moviesStep12);
 
 
-//13) Multi-dimensional array with rankings, filter out ONLY movie names.
+//13) Multi-dimensional array with rankings
 
 var rankedMovies = [
   ["Inception", 1],
@@ -136,7 +131,6 @@ var rankedMovies = [
   ["Spirited Away", 5]
 ];
 
-// Flatten then filter strings
 var movieNamesOnly = rankedMovies
   .flat()
   .filter(function (item) {
@@ -148,7 +142,7 @@ for (var name of movieNamesOnly) {
 }
 
 
-//14) Employees array + anonymous function showEmployee(employees)
+//14) Employees array + anonymous function
 
 var employees = ["Zak", "Jessica", "Mark", "Fred", "Sally"];
 
@@ -166,7 +160,6 @@ showEmployee(employees);
 
 function filterValues(arr) {
   return arr.filter(function (value) {
-    // remove: false, null, 0, "" (blank)
     return value !== false && value !== null && value !== 0 && value !== "";
   });
 }
@@ -193,3 +186,4 @@ function getLargestNumber(arr) {
 
 
 console.log(getLargestNumber([10, 55, 3, 99, 42]));
+
